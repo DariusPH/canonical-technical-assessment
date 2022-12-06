@@ -1,0 +1,52 @@
+Testing SSH connectivity using Password and Key based auth
+
+(The steps involved depend on if you have access to a known good Username &
+Password and SSH Key for the device in question. They also depend on if the
+device has its ssh server properly set up. As instuctions for that feel out
+of scope, I am working on the assumption that you have a working ssh server,
+you know the ip and port of that device and you have a known good username and
+password combination and a known good ssh key. If you need me to write
+instructions for the entire process I can, just let me know.)
+
+User/Pass authentication
+
+Steps
+1. Open a bash terminal and type `ssh {username}@{ip_address}`, replacing
+the {username} and {ip_address} with your own.
+2. You may see a message indicating that the authenticity of the host cannot
+be established. If so, type `yes` and hit enter.*
+3. You will see a password prompt, type in the known password, and hit enter.
+(Note: you will not see anything appear in the password field.)
+4. If you typed the password correctly, you will see your bash prompt change to
+that of the user you have ssh'ed into.
+5. Type `exit` to disconnect from the remote host.
+
+*Whether or not this is an issue really depends on the setting,
+and security policies in place.
+
+PASS
+If you reached the end of the steps without error ssh is working as expected.
+
+FAIL
+If at any point you hit an error that returns you to a prompt, there is a
+problem with the ssh server.
+
+
+
+SSH Key Authentication
+
+Steps
+1. Open a bash terminal and type `ssh {username}@{ip_address}`, replacing
+the {username} and {ip_address} with your own.
+2. You may see a message indicating that the authenticity of the host cannot
+be established. If so, type `yes` and hit enter.*
+4. Assuming the public and private keys match, you will see your bash prompt
+change to that of the user you have ssh'ed into.
+5. Type `exit` to disconnect from the remote host.
+
+PASS
+If you reached the end of the steps without error ssh is working as expected.
+
+FAIL
+If at any point you hit an error that returns you to a prompt, there is a 
+problem with the ssh server.
